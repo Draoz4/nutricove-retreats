@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const footerLinks = [
+const exploreLinks = [
   { href: "/destinations/thailand", label: "Thailand" },
   { href: "/destinations/dominican-republic", label: "Dominican Republic" },
   { href: "/blog", label: "Journal" },
@@ -8,11 +8,17 @@ const footerLinks = [
   { href: "/book", label: "Book a Retreat" },
 ];
 
+const partnerLinks = [
+  { href: "/apply", label: "Apply as Practitioner" },
+  { href: "/apply", label: "Resort Partnership" },
+  { href: "#", label: "Become an Affiliate", external: true },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-deep-forest text-pure-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div>
             <div className="flex items-center gap-2.5 mb-3">
               <span className="font-serif text-xl text-pure-white">NutriCove</span>
@@ -30,11 +36,40 @@ export default function Footer() {
               Explore
             </h4>
             <ul className="space-y-2.5">
-              {footerLinks.map((link) => (
-                <li key={link.href}>
+              {exploreLinks.map((link) => (
+                <li key={link.label}>
                   <Link href={link.href} className="text-sm text-pure-white/50 hover:text-pure-white transition-colors font-sans">
                     {link.label}
                   </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-gold/80 text-[10px] font-sans font-bold tracking-[0.18em] uppercase mb-5">
+              Partner With Us
+            </h4>
+            <ul className="space-y-2.5">
+              {partnerLinks.map((link) => (
+                <li key={link.label}>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-pure-white/50 hover:text-pure-white transition-colors font-sans inline-flex items-center gap-1.5"
+                    >
+                      {link.label}
+                      <svg className="w-3 h-3 opacity-40" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                      </svg>
+                    </a>
+                  ) : (
+                    <Link href={link.href} className="text-sm text-pure-white/50 hover:text-pure-white transition-colors font-sans">
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
