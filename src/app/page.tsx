@@ -92,7 +92,7 @@ export default function Home() {
             <Link href="/destinations/thailand" className="group rounded-3xl overflow-hidden bg-pure-white border border-brand-border shadow-[0_2px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-500">
               <div className="relative h-72 bg-deep-forest overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-deep-forest/20 to-deep-forest/70 z-10" />
-                <Image src="/images/thailand/hero.png" alt="Narai Healing Sanctuary" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                <Image src="/images/thailand/pool-villa.jpg" alt="Narai Healing Sanctuary" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute bottom-0 left-0 right-0 p-7 z-20">
                   <span className="inline-block px-3 py-1 rounded-full text-[10px] font-bold tracking-[0.1em] uppercase bg-pure-white/10 text-pure-white/90 backdrop-blur-sm border border-white/10 mb-2">Flagship</span>
                   <h3 className="font-serif text-4xl text-pure-white leading-tight">Narai Healing Sanctuary</h3>

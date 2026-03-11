@@ -1,3 +1,10 @@
+export interface Review {
+  name: string;
+  date: string;
+  rating: number;
+  text: string;
+}
+
 export interface Destination {
   slug: string;
   name: string;
@@ -11,6 +18,7 @@ export interface Destination {
   accommodations: Accommodation[];
   activities: Activity[];
   gallery: string[];
+  reviews?: Review[];
 }
 
 export interface Accommodation {
