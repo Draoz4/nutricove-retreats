@@ -28,17 +28,69 @@
   --color-muted-text: #9C8E82;
   --color-brand-border: #DDD4C5;
   --color-pure-white: #FFFFFF;
+
+  /* shadcn/ui semantic tokens */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Animation keyframes for accordion */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
 }
 
 :root {
   --radius: 0.625rem;
   --background: #FFFBF5;
   --foreground: #1B2A21;
+
+  /* shadcn/ui tokens mapped to NutriCove palette */
+  --primary: #BF6336;
+  --primary-foreground: #FFFFFF;
+  --secondary: #EDE4D3;
+  --secondary-foreground: #1B2A21;
+  --muted: #F7F0E3;
+  --muted-foreground: #6D6054;
+  --accent: #F7F0E3;
+  --accent-foreground: #1B2A21;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --card: #FFFFFF;
+  --card-foreground: #1B2A21;
+  --popover: #FFFFFF;
+  --popover-foreground: #1B2A21;
+  --border: #DDD4C5;
+  --input: #DDD4C5;
+  --ring: #B8943E;
 }
 
 @layer base {
   * {
-    @apply border-brand-border;
+    @apply border-border;
   }
   body {
     @apply bg-warm-white text-body-text font-sans antialiased;

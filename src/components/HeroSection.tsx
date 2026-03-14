@@ -1,251 +1,203 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { AnimatedGroup } from "@/components/ui/animated-group";
 import { cn } from "@/lib/utils";
 
-/* ── Animated organic shape ── */
-function ElegantShape({
-  className,
-  delay = 0,
-  width = 400,
-  height = 100,
-  rotate = 0,
-  gradient = "from-white/[0.08]",
-}: {
-  className?: string;
-  delay?: number;
-  width?: number;
-  height?: number;
-  rotate?: number;
-  gradient?: string;
-}) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: -150, rotate: rotate - 15 }}
-      animate={{ opacity: 1, y: 0, rotate }}
-      transition={{
-        duration: 2.4,
-        delay,
-        ease: [0.23, 0.86, 0.39, 0.96],
-        opacity: { duration: 1.2 },
-      }}
-      className={cn("absolute", className)}
-    >
-      <motion.div
-        animate={{ y: [0, 15, 0] }}
-        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        style={{ width, height }}
-        className="relative"
-      >
-        <div
-          className={cn(
-            "absolute inset-0 rounded-full",
-            "bg-gradient-to-r to-transparent",
-            gradient,
-            "backdrop-blur-[2px] border border-white/[0.12]",
-            "shadow-[0_8px_32px_0_rgba(255,255,255,0.06)]",
-            "after:absolute after:inset-0 after:rounded-full",
-            "after:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.15),transparent_70%)]"
-          )}
-        />
-      </motion.div>
-    </motion.div>
-  );
-}
+const transitionVariants = {
+  item: {
+    hidden: {
+      opacity: 0,
+      filter: "blur(12px)",
+      y: 12,
+    },
+    visible: {
+      opacity: 1,
+      filter: "blur(0px)",
+      y: 0,
+      transition: {
+        type: "spring",
+        bounce: 0.3,
+        duration: 1.5,
+      },
+    },
+  },
+} as const;
 
-/* ── Hero ── */
 interface HeroSectionProps {
-  headline: string;
+  label?: string;
+  headline?: string;
   highlightWord?: string;
   subtext?: string;
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
-  label?: string;
-  height?: "full" | "large" | "medium";
 }
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 1, delay: 0.5 + i * 0.2, ease: [0.25, 0.4, 0.25, 1] as const },
-  }),
-};
-
 export default function HeroSection({
-  headline,
-  highlightWord,
-  subtext,
-  primaryCta,
+  label = "Curated Wellness Retreats Worldwide",
+  headline = "Healing Has a Destination",
+  highlightWord = "Destination",
+  subtext = "Seven nights of clinically-guided transformation at world-class retreat centers. You pick the life challenge. We handle everything else.",
+  primaryCta = { label: "Find Your Retreat", href: "/book" },
   secondaryCta,
-  label,
-  height = "full",
 }: HeroSectionProps) {
-  const heightClasses = {
-    full: "min-h-screen",
-    large: "min-h-[80vh]",
-    medium: "min-h-[60vh]",
-  };
-
-  const renderHeadline = () => {
-    if (!highlightWord) return headline;
-    const parts = headline.split(highlightWord);
-    return (
-      <>
-        <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
-          {parts[0]}
-        </span>
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-gold-light via-gold to-terracotta italic">
-          {highlightWord}
-        </span>
-        {parts[1] && (
-          <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
-            {parts[1]}
-          </span>
-        )}
-      </>
-    );
-  };
+  const headlineParts = highlightWord
+    ? headline.split(highlightWord)
+    : [headline];
 
   return (
-    <section
-      className={`relative ${heightClasses[height]} w-full flex items-center justify-center overflow-hidden`}
-    >
-      {/* Deep gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0E1A12] via-deep-forest to-[#0E1A12]" />
-
-      {/* Subtle color washes */}
-      <div className="absolute inset-0 bg-gradient-to-br from-terracotta/[0.04] via-transparent to-sage/[0.04] blur-3xl" />
-
-      {/* Animated floating shapes */}
-      <div className="absolute inset-0 overflow-hidden">
-        <ElegantShape
-          delay={0.3}
-          width={600}
-          height={140}
-          rotate={12}
-          gradient="from-terracotta/[0.12]"
-          className="left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
-        />
-        <ElegantShape
-          delay={0.5}
-          width={500}
-          height={120}
-          rotate={-15}
-          gradient="from-sage/[0.12]"
-          className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
-        />
-        <ElegantShape
-          delay={0.4}
-          width={300}
-          height={80}
-          rotate={-8}
-          gradient="from-gold/[0.12]"
-          className="left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
-        />
-        <ElegantShape
-          delay={0.6}
-          width={200}
-          height={60}
-          rotate={20}
-          gradient="from-terracotta/[0.10]"
-          className="right-[15%] md:right-[20%] top-[10%] md:top-[15%]"
-        />
-        <ElegantShape
-          delay={0.7}
-          width={150}
-          height={40}
-          rotate={-25}
-          gradient="from-sage-light/[0.10]"
-          className="left-[20%] md:left-[25%] top-[5%] md:top-[10%]"
-        />
+    <section className="relative overflow-hidden bg-deep-forest min-h-[100vh] flex flex-col items-center justify-center">
+      {/* Background ambient light effects from 21st.dev Hero Section 1 */}
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none isolate opacity-50 contain-strict"
+      >
+        <div className="w-[35rem] h-[80rem] -translate-y-[350px] absolute left-0 top-0 -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,rgba(184,148,62,0.08)_0,rgba(184,148,62,0.02)_50%,transparent_80%)]" />
+        <div className="h-[80rem] absolute left-0 top-0 w-56 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,rgba(184,148,62,0.06)_0,rgba(184,148,62,0.02)_80%,transparent_100%)] [translate:5%_-50%]" />
+        <div className="h-[80rem] -translate-y-[350px] absolute left-0 top-0 w-56 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(184,148,62,0.04)_0,rgba(184,148,62,0.02)_80%,transparent_100%)]" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
-        {label && (
-          <motion.div
-            custom={0}
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 md:mb-10"
+      {/* Radial gradient overlay */}
+      <div
+        aria-hidden
+        className="absolute inset-0 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,rgba(27,42,33,0.95)_75%)]"
+      />
+
+      {/* Gold shimmer light at top */}
+      <div
+        aria-hidden
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_center,rgba(184,148,62,0.12)_0%,transparent_70%)]"
+      />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 text-center pt-32 pb-24">
+        {/* Animated content group with blur-slide transitions */}
+        <AnimatedGroup variants={transitionVariants}>
+          {/* Animated badge pill */}
+          <Link
+            href="#destinations"
+            className="group mx-auto flex w-fit items-center gap-4 rounded-full border border-gold/20 bg-deep-forest/60 backdrop-blur-sm p-1 pl-4 shadow-md shadow-black/10 transition-all duration-300 hover:border-gold/40"
           >
-            <span className="h-2 w-2 rounded-full bg-terracotta/80" />
-            <span className="text-sm text-white/60 tracking-wide font-sans">
+            <span className="text-gold-light text-sm font-sans tracking-wide">
               {label}
             </span>
-          </motion.div>
-        )}
+            <span className="block h-4 w-0.5 bg-gold/30" />
+            <div className="bg-gold/10 group-hover:bg-gold/20 size-6 overflow-hidden rounded-full duration-500">
+              <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
+                <span className="flex size-6">
+                  <ArrowRight className="m-auto size-3 text-gold-light" />
+                </span>
+                <span className="flex size-6">
+                  <ArrowRight className="m-auto size-3 text-gold-light" />
+                </span>
+              </div>
+            </div>
+          </Link>
 
-        <motion.h1
-          custom={1}
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          className="font-serif text-[clamp(42px,7vw,76px)] font-light leading-[1.08] mb-6 tracking-tight"
-        >
-          {renderHeadline()}
-        </motion.h1>
+          {/* Main headline with gradient highlight word */}
+          <h1 className="mt-8 max-w-4xl mx-auto text-balance font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[5.25rem] text-pure-white leading-[1.1]">
+            {headlineParts.length > 1 ? (
+              <>
+                {headlineParts[0]}
+                <span className="bg-gradient-to-r from-gold-light via-terracotta to-gold bg-clip-text text-transparent">
+                  {highlightWord}
+                </span>
+                {headlineParts[1]}
+              </>
+            ) : (
+              headline
+            )}
+          </h1>
 
-        {subtext && (
-          <motion.p
-            custom={2}
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="font-sans text-base sm:text-lg text-white/40 max-w-xl mx-auto mb-10 leading-relaxed font-light tracking-wide"
-          >
+          {/* Subtext */}
+          <p className="mx-auto mt-8 max-w-2xl text-balance text-lg font-sans text-pure-white/55 font-light leading-relaxed">
             {subtext}
-          </motion.p>
-        )}
+          </p>
+        </AnimatedGroup>
 
-        {(primaryCta || secondaryCta) && (
-          <motion.div
-            custom={3}
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+        {/* CTA Buttons with staggered animation */}
+        <AnimatedGroup
+          variants={{
+            container: {
+              visible: {
+                transition: {
+                  staggerChildren: 0.05,
+                  delayChildren: 0.75,
+                },
+              },
+            },
+            ...transitionVariants,
+          }}
+          className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row"
+        >
+          <Button
+            asChild
+            size="lg"
+            className="h-12 rounded-full bg-terracotta hover:bg-terracotta-hover text-pure-white font-sans font-medium px-8 text-base shadow-lg shadow-terracotta/20 transition-all duration-300 hover:shadow-xl hover:shadow-terracotta/30"
           >
-            {primaryCta && (
-              <Link
-                href={primaryCta.href}
-                className="rounded-full bg-terracotta px-10 py-4 text-sm font-semibold text-pure-white hover:bg-terracotta-hover transition-all shadow-[0_4px_28px_rgba(191,99,54,0.3)] hover:shadow-[0_8px_36px_rgba(191,99,54,0.4)] hover:-translate-y-0.5"
-              >
-                {primaryCta.label} &rarr;
-              </Link>
-            )}
-            {secondaryCta && (
-              <Link
-                href={secondaryCta.href}
-                className="rounded-full border border-white/15 px-10 py-4 text-sm font-medium text-white/70 hover:bg-white/[0.04] hover:border-white/25 hover:text-white/90 transition-all"
-              >
-                {secondaryCta.label}
-              </Link>
-            )}
-          </motion.div>
-        )}
+            <Link href={primaryCta.href}>
+              <span className="flex items-center gap-2">
+                {primaryCta.label}
+                <ArrowRight className="size-4" />
+              </span>
+            </Link>
+          </Button>
 
-        {height === "full" && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2, duration: 1 }}
-            className="mt-[72px] flex flex-col items-center gap-2"
-          >
-            <span className="text-[11px] text-white/25 tracking-[0.12em] uppercase font-sans">
-              Explore
-            </span>
-            <div className="w-px h-10 bg-gradient-to-b from-gold/40 to-transparent animate-pulse" />
-          </motion.div>
-        )}
+          {secondaryCta && (
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="h-12 rounded-full border-gold/30 bg-transparent text-gold-light hover:bg-gold/10 hover:text-gold-light font-sans px-8 text-base"
+            >
+              <Link href={secondaryCta.href}>
+                <span>{secondaryCta.label}</span>
+              </Link>
+            </Button>
+          )}
+        </AnimatedGroup>
+
+        {/* Stats bar with delayed stagger */}
+        <AnimatedGroup
+          variants={{
+            container: {
+              visible: {
+                transition: {
+                  staggerChildren: 0.08,
+                  delayChildren: 1.2,
+                },
+              },
+            },
+            ...transitionVariants,
+          }}
+          className="mt-20 flex flex-wrap items-center justify-center gap-8 md:gap-16"
+        >
+          <div className="text-center">
+            <p className="font-serif text-3xl md:text-4xl text-gold-light">7</p>
+            <p className="text-xs font-sans uppercase tracking-[0.16em] text-pure-white/40 mt-1">Night Programs</p>
+          </div>
+          <div className="h-8 w-px bg-gold/20 hidden sm:block" />
+          <div className="text-center">
+            <p className="font-serif text-3xl md:text-4xl text-gold-light">4</p>
+            <p className="text-xs font-sans uppercase tracking-[0.16em] text-pure-white/40 mt-1">Healing Themes</p>
+          </div>
+          <div className="h-8 w-px bg-gold/20 hidden sm:block" />
+          <div className="text-center">
+            <p className="font-serif text-3xl md:text-4xl text-gold-light">2</p>
+            <p className="text-xs font-sans uppercase tracking-[0.16em] text-pure-white/40 mt-1">Global Destinations</p>
+          </div>
+          <div className="h-8 w-px bg-gold/20 hidden sm:block" />
+          <div className="text-center">
+            <p className="font-serif text-3xl md:text-4xl text-gold-light">All</p>
+            <p className="text-xs font-sans uppercase tracking-[0.16em] text-pure-white/40 mt-1">Inclusive</p>
+          </div>
+        </AnimatedGroup>
       </div>
 
-      {/* Bottom fade */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0E1A12] via-transparent to-[#0E1A12]/80 pointer-events-none" />
+      {/* Bottom gradient fade into next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-warm-white to-transparent" />
     </section>
   );
 }

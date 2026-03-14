@@ -2,58 +2,71 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
+import { ArrowRight, Clock } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import SectionHeading from "@/components/SectionHeading";
 import { blogPosts } from "@/data/blog-posts";
 
 export default function BlogPreview() {
-  const blogPreviewSlice = blogPosts.slice(0, 6);
+  const featured = blogPosts.slice(0, 3);
 
   return (
     <section className="bg-cream py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          label="Insights"
-          headline="From the Journal"
-          subhead="Perspectives on healing, transformation, and the science behind the retreat experience."
+          label="From the Journal"
+          headline="Stories & Insights"
+          subhead="Real perspectives on transformation, healing, and the retreat experience."
         />
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
-          {blogPreviewSlice.map((post, i) => (
-            <motion.div
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {featured.map((post, i) => (
+            <motion.article
               key={post.slug}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="group"
             >
-              <Link
-                href={`/blog/${post.slug}`}
-                className="group bg-pure-white rounded-2xl border border-brand-border overflow-hidden hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-500 block"
-              >
-                <div className="h-44 relative overflow-hidden">
-                  <Image src={post.image} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-deep-forest/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4">
-                    <span className="text-[10px] font-semibold tracking-[0.12em] uppercase text-gold-light bg-gold/15 backdrop-blur-sm px-2.5 py-1 rounded-full border border-gold/10">
+              <Link href={`/blog/${post.slug}`} className="block">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden mb-5">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-deep-forest/30 to-transparent" />
+                  <div className="absolute top-3 left-3">
+                    <Badge className="bg-pure-white/90 text-deep-forest border-0 backdrop-blur-sm text-xs">
                       {post.category}
-                    </span>
+                    </Badge>
                   </div>
                 </div>
-                <div className="p-5">
-                  <h4 className="font-serif text-lg text-deep-forest leading-snug group-hover:text-terracotta transition-colors duration-300">
-                    {post.title}
-                  </h4>
-                  <span className="inline-flex items-center text-xs font-medium text-terracotta mt-3">
-                    Read Article &rarr;
-                  </span>
+                <div className="flex items-center gap-3 mb-3">
+                  <Clock className="w-3.5 h-3.5 text-muted-text" />
+                  <span className="text-xs font-sans text-muted-text">{post.readTime}</span>
+                  <span className="text-xs text-muted-text">&#183;</span>
+                  <span className="text-xs font-sans text-muted-text">{post.date}</span>
                 </div>
+                <h3 className="font-serif text-xl text-deep-forest mb-2 group-hover:text-terracotta transition-colors">
+                  {post.title}
+                </h3>
+                <p className="font-sans text-sm text-secondary-text leading-relaxed line-clamp-2">
+                  {post.excerpt}
+                </p>
+                <span className="inline-flex items-center gap-1 text-sm font-sans font-medium text-terracotta mt-4 group-hover:gap-2 transition-all">
+                  Read More <ArrowRight className="w-4 h-4" />
+                </span>
               </Link>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
-        <div className="text-center mt-10">
-          <Link href="/blog" className="inline-flex items-center text-sm font-medium text-terracotta hover:text-terracotta-hover transition-colors">
-            View All Articles &rarr;
+        <div className="text-center mt-12">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-sans font-medium bg-deep-forest text-pure-white hover:bg-deep-forest/90 transition-colors"
+          >
+            View All Articles <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

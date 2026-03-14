@@ -24,7 +24,7 @@ export default function ThemesItinerary() {
           label="The Four Retreat Themes"
           headline="Your 7-Day Journey"
           subhead="Each theme follows a unique therapeutic arc. Tap a theme to see the full day-by-day itinerary."
-          light
+          dark
         />
 
         <div className="flex flex-wrap justify-center gap-3 mt-10 mb-12">

@@ -1,28 +1,47 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+
 interface SectionHeadingProps {
   label?: string;
   headline: string;
   subhead?: string;
-  centered?: boolean;
-  light?: boolean;
+  dark?: boolean;
+  className?: string;
 }
 
-export default function SectionHeading({ label, headline, subhead, centered = true, light = false }: SectionHeadingProps) {
+export default function SectionHeading({ label, headline, subhead, dark = false, className }: SectionHeadingProps) {
   return (
-    <div className={`mb-12 ${centered ? "text-center" : ""}`}>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={cn("text-center mb-16", className)}
+    >
       {label && (
-        <p className={`text-[11px] font-sans font-bold tracking-[0.16em] uppercase mb-3 ${light ? "text-gold-light" : "text-terracotta"}`}>
+        <span className={cn(
+          "inline-block text-[11px] font-sans font-bold tracking-[0.2em] uppercase mb-4",
+          dark ? "text-gold-light" : "text-terracotta"
+        )}>
           {label}
-        </p>
+        </span>
       )}
-      <h2 className={`font-serif text-3xl sm:text-4xl md:text-5xl font-normal leading-tight mb-4 ${light ? "text-pure-white" : "text-deep-forest"}`}>
+      <h2 className={cn(
+        "font-serif text-3xl sm:text-4xl md:text-5xl leading-tight",
+        dark ? "text-pure-white" : "text-deep-forest"
+      )}>
         {headline}
       </h2>
-      <div className={`w-16 h-0.5 ${light ? "bg-gold/50" : "bg-terracotta/40"} ${centered ? "mx-auto" : ""} mb-4`} />
       {subhead && (
-        <p className={`font-sans text-base sm:text-lg font-light max-w-2xl leading-relaxed ${centered ? "mx-auto" : ""} ${light ? "text-pure-white/55" : "text-secondary-text"}`}>
+        <p className={cn(
+          "mt-4 max-w-2xl mx-auto font-sans text-base md:text-lg font-light leading-relaxed",
+          dark ? "text-warm-sand/80" : "text-secondary-text"
+        )}>
           {subhead}
         </p>
       )}
-    </div>
+    </motion.div>
   );
 }
