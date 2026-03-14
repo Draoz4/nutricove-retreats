@@ -32,9 +32,14 @@ export const homeFaqs: FAQItem[] = [
       "These are daily group therapy sessions led by a licensed clinical practitioner, tailored specifically to your retreat theme. It\u2019s the clinical backbone of every retreat \u2014 where the real transformation work happens.",
   },
   {
-    question: "Are the ayahuasca ceremonies safe?",
+    question: "Are the sacred plant ceremonies safe?",
     answer:
-      "All ceremonies are conducted by trained, experienced facilitators with comprehensive safety protocols. A licensed clinical therapist is present throughout. All guests complete a thorough medical screening before participation.",
+      "All sacred plant ceremonies are conducted by trained, experienced facilitators with comprehensive safety protocols. A licensed clinical therapist is present throughout. All guests complete a thorough medical screening before participation. Participation is completely optional — the full retreat experience is included regardless of whether you choose to participate in plant ceremonies.",
+  },
+  {
+    question: "Do I have to participate in plant ceremonies?",
+    answer:
+      "Absolutely not. Participation in any sacred plant ceremony is completely optional. The full retreat experience — accommodations, meals, yoga, Guided Transformation Sessions, excursions, bodywork, breathwork, cacao ceremonies, sound baths, and all other programming — is included regardless of whether you choose to participate in plant ceremonies.",
   },
   {
     question: "What are the IV therapy and peptide services?",

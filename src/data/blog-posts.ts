@@ -171,8 +171,8 @@ This is also why we don't call it a vacation. A vacation is about escape. A retr
 The retreat is the catalyst, not the entire process. Integration continues for weeks and months after you leave. Our aftercare program includes follow-up coaching sessions, a digital wellness toolkit, and access to our alumni community. The seven days plant the seeds. The aftercare helps them take root.`,
   },
   {
-    slug: "ayahuasca-in-thailand-ancient-medicine-modern-safety",
-    title: "Ayahuasca in Thailand: Ancient Medicine Meets Modern Safety",
+    slug: "sacred-plant-ceremonies-ancient-medicine-modern-safety",
+    title: "Sacred Plant Ceremonies: Ancient Medicine Meets Modern Safety",
     excerpt:
       "How NutriCove approaches sacred plant medicine with clinical oversight, comprehensive screening, and trained facilitators.",
     category: "Ceremonies",
@@ -183,7 +183,7 @@ The retreat is the catalyst, not the entire process. Integration continues for w
 
 ## The Problem with the Current Landscape
 
-The interest in ayahuasca and other plant medicines has exploded in recent years. Unfortunately, so has the number of poorly run ceremonies with inadequate safety measures. Stories of unscreened participants having adverse reactions, untrained facilitators, and ceremonies run in contexts where emergency medical care isn't accessible have created legitimate concern.
+The interest in sacred plant medicines like ayahuasca, psilocybin, and other traditional practices has exploded in recent years. Unfortunately, so has the number of poorly run ceremonies with inadequate safety measures. Stories of unscreened participants having adverse reactions, untrained facilitators, and ceremonies run in contexts where emergency medical care isn't accessible have created legitimate concern.
 
 On the other end, overly medicalized approaches strip the experience of its spiritual and ceremonial context — reducing a sacred tradition to a pharmaceutical intervention. Neither extreme serves the participant.
 
@@ -191,7 +191,7 @@ On the other end, overly medicalized approaches strip the experience of its spir
 
 NutriCove occupies the middle ground. We honor the ceremonial tradition while implementing clinical safety standards that protect every participant. Here's what that looks like:
 
-**Comprehensive Medical Screening.** Every guest completes a thorough medical and psychological intake before their retreat. This includes current medications, psychiatric history, cardiovascular health, and any contraindications. Certain medications (particularly SSRIs and MAOIs) are incompatible with ayahuasca, and we screen for these rigorously. If you don't pass the screening, we'll work with you to find alternative ceremonial experiences during the retreat.
+**Comprehensive Medical Screening.** Every guest completes a thorough medical and psychological intake before their retreat. This includes current medications, psychiatric history, cardiovascular health, and any contraindications. Certain medications (particularly SSRIs and MAOIs) are incompatible with plant medicines, and we screen for these rigorously. If you don't pass the screening, we'll work with you to find alternative ceremonial experiences during the retreat.
 
 **Trained, Experienced Facilitators.** Our ceremony facilitators have years of experience working with plant medicine in traditional contexts. They are not therapists administering a substance — they are ceremonial leaders holding sacred space. But they work alongside our clinical team.
 
@@ -207,11 +207,11 @@ Ceremonies typically take place on the evening of Day 3 or Day 4 of the retreat,
 
 The ceremony itself lasts 4-6 hours. Facilitators guide participants through the experience with music, chanting, and individual attention. The clinical therapist maintains a quiet, supportive presence throughout.
 
-Not every retreat includes ayahuasca. Other ceremonial options include cacao ceremonies, breathwork journeys, and fire ceremonies. Participation in any ceremony is always optional. No guest is ever pressured to participate in anything they're not comfortable with.
+Not every retreat includes plant medicine ceremonies. Other ceremonial options include cacao ceremonies, breathwork journeys, and fire ceremonies. Participation in any ceremony is always optional. No guest is ever pressured to participate in anything they're not comfortable with.
 
 ## The Thailand Context
 
-Thailand has a unique relationship with plant medicine. While ayahuasca is not part of the traditional Thai healing pharmacopoeia, Thailand's openness to international healing practices and its strong tradition of herbal medicine create a supportive context. Our ceremonies in Thailand integrate elements of Thai spiritual tradition — chanting, offerings, and the blessing of the ceremonial space — while honoring the Amazonian origins of the medicine.
+Thailand has a unique relationship with plant medicine. While some plant medicines are not part of the traditional Thai healing pharmacopoeia, Thailand's openness to international healing practices and its strong tradition of herbal medicine create a supportive context. Our ceremonies in Thailand integrate elements of Thai spiritual tradition — chanting, offerings, and the blessing of the ceremonial space — while honoring the Amazonian origins of the medicine.
 
 At our Koh Samui location, ceremonies take place in an open-air pavilion overlooking the Gulf of Thailand. The natural setting — ocean sounds, tropical air, starlight — creates a powerful container for the experience.
 

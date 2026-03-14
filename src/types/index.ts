@@ -97,3 +97,17 @@ export interface FAQItem {
   question: string;
   answer: string;
 }
+
+export interface LeadershipProfile {
+  name: string;
+  title: string;
+  credentials?: string;
+  bio: string;
+  image?: string;
+}
+
+export interface PlantCeremonySafetyItem {
+  title: string;
+  description: string;
+  icon?: string;
+}
