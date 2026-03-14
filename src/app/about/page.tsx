@@ -285,17 +285,17 @@ export default function AboutPage() {
             <p>
               Currently live in{" "}
               <strong className="font-medium text-deep-forest">
-                Tulum, Mexico
+                Thailand (Narai Healing Sanctuary, Koh Samui)
               </strong>{" "}
               and{" "}
               <strong className="font-medium text-deep-forest">
-                Bali, Indonesia
+                Dominican Republic (Zaria Eco Retreat, Saman&aacute;)
               </strong>
               , with{" "}
               <strong className="font-medium text-deep-forest">
-                Costa Rica and Peru
+                Tulum, Bali, Costa Rica, and Peru
               </strong>{" "}
-              planned for 2027.
+              in the pipeline.
             </p>
             <p>
               The four retreat themes &mdash; Release, Reset, Return, and

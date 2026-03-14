@@ -16,7 +16,7 @@ const steps = [
     step: "02",
     title: "Pick Your Destination",
     description:
-      "Tulum or Bali \u2014 each location adds its own cultural healing traditions, landscapes, and excursions to the core program.",
+      "Thailand or Dominican Republic \u2014 each location adds its own cultural healing traditions, landscapes, and excursions to the core program. More destinations coming soon.",
     image: "/images/zaria/beach-aerial-boats.jpg",
   },
   {

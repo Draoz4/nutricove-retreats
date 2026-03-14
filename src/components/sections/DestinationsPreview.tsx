@@ -9,22 +9,40 @@ import { cn } from "@/lib/utils";
 
 const destinations = [
   {
-    name: "Tulum, Mexico",
-    resort: "NutriCove Tulum",
-    badge: "Now Open",
-    image: "/images/zaria/beach-hammock-palms.jpg",
-    href: "/book",
-    tags: ["Cenotes", "Mayan Heritage", "Jungle & Beach"],
+    name: "Koh Samui, Thailand",
+    resort: "Narai Healing Sanctuary",
+    badge: "Flagship",
+    image: "/images/thailand/pool-villa.jpg",
+    href: "/destinations/thailand",
+    tags: ["Private Pool Villas", "Thai Healing Arts", "Beach"],
     available: true,
   },
   {
-    name: "Ubud, Bali",
-    resort: "NutriCove Bali",
+    name: "Saman\u00e1, Dominican Republic",
+    resort: "Zaria Eco Retreat",
     badge: "Now Open",
     image: "/images/zaria/hero-aerial-pool.jpg",
-    href: "/book",
-    tags: ["Rice Terraces", "Sacred Temples", "Volcanic Springs"],
+    href: "/destinations/dominican-republic",
+    tags: ["Eco-Luxury", "Farm-to-Table", "Waterfalls"],
     available: true,
+  },
+  {
+    name: "Tulum, Mexico",
+    resort: "Coming Soon",
+    badge: "Coming Soon",
+    image: "/images/zaria/beach-hammock-palms.jpg",
+    href: "#",
+    tags: ["Cenotes", "Mayan Heritage", "Jungle & Beach"],
+    available: false,
+  },
+  {
+    name: "Ubud, Bali",
+    resort: "Coming Soon",
+    badge: "Coming Soon",
+    image: "/images/zaria/beach-aerial-boats.jpg",
+    href: "#",
+    tags: ["Rice Terraces", "Sacred Temples", "Volcanic Springs"],
+    available: false,
   },
   {
     name: "Costa Rica",
@@ -56,7 +74,7 @@ export default function DestinationsPreview() {
           subhead="Each destination adds its own cultural healing traditions, landscapes, and excursions to the core therapeutic program."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {destinations.map((dest, i) => (
+          {destinations.slice(0, 2).map((dest, i) => (
             <motion.div
               key={dest.name}
               initial={{ opacity: 0, y: 30 }}
@@ -66,10 +84,7 @@ export default function DestinationsPreview() {
             >
               <Link
                 href={dest.href}
-                className={cn(
-                  "group relative block aspect-[16/10] rounded-2xl overflow-hidden shadow-lg",
-                  !dest.available && "pointer-events-none"
-                )}
+                className="group relative block aspect-[16/10] rounded-2xl overflow-hidden shadow-lg"
               >
                 <img
                   src={dest.image}
@@ -77,15 +92,12 @@ export default function DestinationsPreview() {
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-deep-forest/80 via-deep-forest/20 to-transparent" />
-                {!dest.available && (
-                  <div className="absolute inset-0 bg-deep-forest/40 backdrop-blur-[1px]" />
-                )}
                 <div className="absolute top-4 left-4">
                   <Badge
                     className={
-                      dest.badge === "Now Open"
+                      dest.badge === "Flagship"
                         ? "bg-terracotta text-pure-white border-0"
-                        : "bg-pure-white/20 text-pure-white border-pure-white/30 backdrop-blur-sm"
+                        : "bg-gold text-deep-forest border-0"
                     }
                   >
                     {dest.badge}
@@ -111,13 +123,42 @@ export default function DestinationsPreview() {
                       </span>
                     ))}
                   </div>
-                  {dest.available && (
-                    <span className="inline-flex items-center gap-1 text-sm font-sans font-medium text-gold-light group-hover:gap-2 transition-all">
-                      Book Now <ArrowRight className="w-4 h-4" />
-                    </span>
-                  )}
+                  <span className="inline-flex items-center gap-1 text-sm font-sans font-medium text-gold-light group-hover:gap-2 transition-all">
+                    Explore <ArrowRight className="w-4 h-4" />
+                  </span>
                 </div>
               </Link>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Coming Soon */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+          {destinations.slice(2).map((dest, i) => (
+            <motion.div
+              key={dest.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
+              className="relative aspect-[4/3] rounded-xl overflow-hidden"
+            >
+              <img
+                src={dest.image}
+                alt={dest.name}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-deep-forest/50 backdrop-blur-[1px]" />
+              <div className="absolute top-3 left-3">
+                <Badge className="bg-pure-white/20 text-pure-white border-pure-white/30 backdrop-blur-sm text-[10px]">
+                  Coming Soon
+                </Badge>
+              </div>
+              <div className="absolute bottom-3 left-3 right-3">
+                <h4 className="font-serif text-lg text-pure-white leading-tight">
+                  {dest.name}
+                </h4>
+              </div>
             </motion.div>
           ))}
         </div>

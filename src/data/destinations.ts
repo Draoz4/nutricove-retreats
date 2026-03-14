@@ -169,6 +169,8 @@ export const destinations: Destination[] = [
 ];
 
 export const comingSoonDestinations = [
-  { name: "Costa Rica", location: "Location Coming Soon", year: "2027" },
-  { name: "Peru", location: "Location Coming Soon", year: "2027" },
+  { name: "Tulum, Mexico", location: "Coming Soon", year: "2026" },
+  { name: "Bali, Indonesia", location: "Coming Soon", year: "2026" },
+  { name: "Costa Rica", location: "Coming Soon", year: "2027" },
+  { name: "Peru", location: "Coming Soon", year: "2027" },
 ];
