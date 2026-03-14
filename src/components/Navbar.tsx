@@ -2,14 +2,17 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { href: "/destinations/thailand", label: "Thailand" },
-  { href: "/destinations/dominican-republic", label: "Dominican Republic" },
+  { href: "/#destinations", label: "Destinations" },
+  { href: "/#themes", label: "Retreat Themes" },
+  { href: "/#included", label: "What's Included" },
+  { href: "/#pricing", label: "Pricing" },
   { href: "/about", label: "About" },
   { href: "/blog", label: "Journal" },
 ];
@@ -17,12 +20,17 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   useEffect(() => {
+    setScrolled(window.scrollY > 20);
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const showTransparent = isHome && !scrolled;
 
   return (
     <>
@@ -32,24 +40,28 @@ export default function Navbar() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-          scrolled
-            ? "bg-pure-white/80 backdrop-blur-xl shadow-sm border-b border-brand-border/50"
-            : "bg-transparent"
+          showTransparent
+            ? "bg-transparent"
+            : "bg-pure-white/90 backdrop-blur-xl shadow-sm border-b border-brand-border/50"
         )}
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             <Link href="/" className="flex items-center gap-2 group">
-              <span className={cn(
-                "font-serif text-xl lg:text-2xl font-semibold transition-colors",
-                scrolled ? "text-deep-forest" : "text-pure-white"
-              )}>
+              <span
+                className={cn(
+                  "font-serif text-xl lg:text-2xl font-semibold transition-colors",
+                  showTransparent ? "text-pure-white" : "text-deep-forest"
+                )}
+              >
                 NutriCove
               </span>
-              <span className={cn(
-                "hidden sm:inline text-[10px] font-sans font-bold tracking-[0.2em] uppercase mt-1 transition-colors",
-                scrolled ? "text-terracotta" : "text-gold-light"
-              )}>
+              <span
+                className={cn(
+                  "hidden sm:inline text-[10px] font-sans font-bold tracking-[0.2em] uppercase mt-1 transition-colors",
+                  showTransparent ? "text-gold-light" : "text-terracotta"
+                )}
+              >
                 Retreats
               </span>
             </Link>
@@ -61,13 +73,19 @@ export default function Navbar() {
                   href={link.href}
                   className={cn(
                     "text-sm font-sans font-medium tracking-wide transition-colors hover:text-terracotta",
-                    scrolled ? "text-secondary-text" : "text-pure-white/80 hover:text-pure-white"
+                    showTransparent
+                      ? "text-pure-white/80 hover:text-pure-white"
+                      : "text-secondary-text"
                   )}
                 >
                   {link.label}
                 </Link>
               ))}
-              <Button asChild size="sm" className="rounded-full bg-terracotta hover:bg-terracotta-hover text-pure-white px-6">
+              <Button
+                asChild
+                size="sm"
+                className="rounded-full bg-terracotta hover:bg-terracotta-hover text-pure-white px-6"
+              >
                 <Link href="/book">Book a Retreat</Link>
               </Button>
             </div>
@@ -76,11 +94,15 @@ export default function Navbar() {
               onClick={() => setMobileOpen(!mobileOpen)}
               className={cn(
                 "lg:hidden p-2 rounded-lg transition-colors",
-                scrolled ? "text-deep-forest" : "text-pure-white"
+                showTransparent ? "text-pure-white" : "text-deep-forest"
               )}
               aria-label="Toggle menu"
             >
-              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
@@ -106,8 +128,13 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <Button asChild className="rounded-full bg-terracotta hover:bg-terracotta-hover text-pure-white px-8 mt-4">
-                <Link href="/book" onClick={() => setMobileOpen(false)}>Book a Retreat</Link>
+              <Button
+                asChild
+                className="rounded-full bg-terracotta hover:bg-terracotta-hover text-pure-white px-8 mt-4"
+              >
+                <Link href="/book" onClick={() => setMobileOpen(false)}>
+                  Book a Retreat
+                </Link>
               </Button>
             </div>
           </motion.div>

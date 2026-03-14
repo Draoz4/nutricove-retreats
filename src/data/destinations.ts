@@ -9,7 +9,7 @@ export const destinations: Destination[] = [
     country: "Thailand",
     badge: "Flagship",
     heroImage: "/images/thailand/pool-villa.jpg",
-    description: "Our flagship retreat on Koh Samui’s tranquil western coast. Private pool villas nestled in a gated tropical garden community, just 3 minutes from Lipa Noi Beach. Ancient Thai healing arts meet modern therapeutic practice — sunrise yoga on white sand, traditional Nuad Boran massage, sacred herbal steam ceremonies, Buddhist temple excursions, and evening beach rituals under the palms. Lipa Noi is the quiet side of the island — far from the tourist strip, close to the soul of Thailand.",
+    description: "Our flagship retreat on Koh Samui's tranquil western coast. Private pool villas nestled in a gated tropical garden community, just 3 minutes from Lipa Noi Beach. Ancient Thai healing arts meet modern therapeutic practice \u2014 sunrise yoga on white sand, traditional Nuad Boran massage, sacred herbal steam ceremonies, Buddhist temple excursions, and evening beach rituals under the palms. Lipa Noi is the quiet side of the island \u2014 far from the tourist strip, close to the soul of Thailand.",
     highlights: [
       "Private Pool Villas",
       "3 Min to Lipa Noi Beach",
@@ -79,7 +79,7 @@ export const destinations: Destination[] = [
         name: "Hayley Ann",
         date: "July 2025",
         rating: 5,
-        text: "Great location – much quieter down in the south of the island, which was exactly what we were looking for. Lipa Noi beach was just a short walk away. We caught some stunning sunsets. The owner was incredibly welcoming and helpful, even arranging scooters for us. The peaceful surroundings and beautiful garden were perfect for relaxing.",
+        text: "Great location \u2013 much quieter down in the south of the island, which was exactly what we were looking for. Lipa Noi beach was just a short walk away. We caught some stunning sunsets. The owner was incredibly welcoming and helpful, even arranging scooters for us. The peaceful surroundings and beautiful garden were perfect for relaxing.",
       },
       {
         name: "Sabrina",
@@ -99,7 +99,7 @@ export const destinations: Destination[] = [
         rating: 5,
         text: "Thanks for everything! We had a good time and the host was flexible with us!",
       },
-    ]
+    ],
   },
   {
     slug: "dominican-republic",
@@ -169,6 +169,6 @@ export const destinations: Destination[] = [
 ];
 
 export const comingSoonDestinations = [
+  { name: "Costa Rica", location: "Location Coming Soon", year: "2027" },
   { name: "Peru", location: "Location Coming Soon", year: "2027" },
-  { name: "Colombia", location: "Location Coming Soon", year: "2027" },
 ];

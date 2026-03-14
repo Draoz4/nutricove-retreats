@@ -2,8 +2,8 @@ import Link from "next/link";
 import { Instagram, Facebook, Mail } from "lucide-react";
 
 const exploreLinks = [
-  { href: "/destinations/thailand", label: "Thailand" },
-  { href: "/destinations/dominican-republic", label: "Dominican Republic" },
+  { href: "/#destinations", label: "Destinations" },
+  { href: "/#themes", label: "Retreat Themes" },
   { href: "/blog", label: "Journal" },
   { href: "/about", label: "About" },
   { href: "/book", label: "Book a Retreat" },
@@ -85,10 +85,10 @@ export default function Footer() {
                 </a>
               </li>
               <li className="font-sans text-sm text-warm-sand/60">
-                Koh Samui, Thailand
+                Tulum, Mexico
               </li>
               <li className="font-sans text-sm text-warm-sand/60">
-                Samana, Dominican Republic
+                Bali, Indonesia
               </li>
             </ul>
           </div>

@@ -20,9 +20,10 @@ import type { Destination, FAQItem } from "@/types";
 interface DestinationPageProps {
   destination: Destination;
   faqs: FAQItem[];
+  showLeadership?: boolean;
 }
 
-export default function DestinationPage({ destination, faqs }: DestinationPageProps) {
+export default function DestinationPage({ destination, faqs, showLeadership = false }: DestinationPageProps) {
   return (
     <>
       <Navbar />
@@ -47,8 +48,8 @@ export default function DestinationPage({ destination, faqs }: DestinationPagePr
         </div>
       </section>
 
-      {/* 3. Leadership */}
-      <Leadership />
+      {/* 3. Leadership (Thailand only) */}
+      {showLeadership && <Leadership />}
 
       {/* 4. Photo Gallery */}
       <PhotoGallery images={destination.gallery} resortName={destination.resortName} />
@@ -71,13 +72,13 @@ export default function DestinationPage({ destination, faqs }: DestinationPagePr
       {/* 10. Pricing */}
       <PricingSection />
 
-      {/* 11. Premium Add-Ons — Full Menu */}
+      {/* 11. Premium Add-Ons */}
       <AddOnsMenu />
 
       {/* 12. FAQ */}
       <section className="bg-cream py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <SectionHeading label="FAQ" headline={`Visiting ${destination.country}`} />
+          <SectionHeading label="FAQ" headline={"Visiting " + destination.country} />
           <FAQAccordion items={faqs} />
         </div>
       </section>
@@ -85,7 +86,7 @@ export default function DestinationPage({ destination, faqs }: DestinationPagePr
       {/* 13. CTA */}
       <CTABlock
         headline="Ready to Transform?"
-        body={`Secure your spot at ${destination.resortName}. Our team will guide you through the booking process.`}
+        body={"Secure your spot at " + destination.resortName + ". Our team will guide you through the booking process."}
         primaryCta={{ label: "Book Your Retreat", href: "/book" }}
         secondaryCta={{ label: "Questions? Talk to Our Team", href: "mailto:retreats@nutricove.com" }}
       />

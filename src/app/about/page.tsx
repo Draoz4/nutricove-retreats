@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import SectionHeading from "@/components/SectionHeading";
 import CTABlock from "@/components/CTABlock";
 import Footer from "@/components/Footer";
-import Leadership from "@/components/sections/Leadership";
+import { cn } from "@/lib/utils";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -107,23 +107,23 @@ export default function AboutPage() {
             variants={itemVariants}
             className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-pure-white leading-[1.1]"
           >
-            Built by Healers.
+            Built for Humans.
             <br />
             <span className="bg-gradient-to-r from-gold-light via-terracotta to-gold bg-clip-text text-transparent">
-              Not by Marketers.
+              Not Corporations.
             </span>
           </motion.h1>
           <motion.p
             variants={itemVariants}
             className="mt-6 font-sans text-lg text-pure-white/55 font-light leading-relaxed max-w-xl mx-auto"
           >
-            NutriCove Wellness Retreats exists because we believe transformation
-            should be accessible, clinically-guided, and deeply personal.
+            We built NutriCove because healing should feel human &mdash; not
+            corporate, not commercial, not mass-produced.
           </motion.p>
         </motion.div>
       </section>
 
-      {/* Mission */}
+      {/* Our Why */}
       <section className="bg-warm-white py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -132,30 +132,38 @@ export default function AboutPage() {
           transition={{ duration: 0.8 }}
           className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8"
         >
-          <SectionHeading label="The Mission" headline="Why We Built This" />
+          <SectionHeading label="The Why" headline="Why We Built This" />
           <div className="space-y-6 font-sans text-base text-body-text font-light leading-relaxed">
             <p>
-              The wellness retreat industry is fractured. On one end, you have
-              luxury resorts offering spa menus with no therapeutic depth. On the
-              other, you have underground ceremonies with no clinical oversight.
-              The middle ground &mdash; where real healing happens with
-              professional support &mdash; barely exists.
+              We looked at the wellness retreat industry and saw a problem. On
+              one end, luxury resorts offering spa weekends with no real
+              therapeutic depth. On the other, underground ceremonies with no
+              clinical oversight. And everywhere in between &mdash; retreats that
+              feel more like corporate team-building than genuine healing.
             </p>
             <p>
-              NutriCove was born from a simple idea:{" "}
+              NutriCove was born from a desire to change that. We believe the
+              best healing happens when you{" "}
               <strong className="font-medium text-deep-forest">
-                partner with world-class resorts and bring the clinical framework
-                to them.
+                step away from the noise
               </strong>{" "}
-              Instead of building one retreat center and hoping people find it,
-              we curate a network of destinations and run the same
-              evidence-based, therapeutically-guided program at each one.
+              &mdash; from your phone, your inbox, your routine &mdash; and{" "}
+              <strong className="font-medium text-deep-forest">
+                actually breathe.
+              </strong>{" "}
+              Lower your cortisol. Reconnect with yourself. Remember who you
+              were before life got so heavy.
             </p>
             <p>
-              Every retreat is anchored by daily Guided Transformation Sessions
-              &mdash; led by a licensed clinical practitioner who tailors the
-              therapeutic work to your specific life challenge. This is the key
-              differentiator. This is why it works.
+              We created retreats for people who&apos;ve been through something.
+              Loss. Burnout. Grief. A chapter ending that they didn&apos;t
+              choose. Our four themes &mdash;{" "}
+              <strong className="font-medium text-deep-forest">
+                Release, Reset, Return, and Reclaim
+              </strong>{" "}
+              &mdash; aren&apos;t marketing labels. They represent real stages
+              of processing, and each one is designed to meet you exactly where
+              you are.
             </p>
           </div>
         </motion.div>
@@ -181,13 +189,19 @@ export default function AboutPage() {
                 <motion.div
                   key={pillar.title}
                   variants={cardVariants}
-                  className={`group bg-pure-white border-l-4 ${pillar.accent} rounded-r-xl p-7 hover:shadow-lg hover:shadow-black/5 transition-shadow duration-300`}
+                  className={cn(
+                    "group bg-pure-white border-l-4 rounded-r-xl p-7 hover:shadow-lg hover:shadow-black/5 transition-shadow duration-300",
+                    pillar.accent
+                  )}
                 >
                   <div
-                    className={`w-10 h-10 rounded-lg ${pillar.iconBg} flex items-center justify-center mb-4`}
+                    className={cn(
+                      "w-10 h-10 rounded-lg flex items-center justify-center mb-4",
+                      pillar.iconBg
+                    )}
                   >
                     <IconComponent
-                      className={`w-5 h-5 ${pillar.iconColor}`}
+                      className={cn("w-5 h-5", pillar.iconColor)}
                     />
                   </div>
                   <h3 className="font-serif text-xl text-deep-forest mb-3">
@@ -203,11 +217,53 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Leadership */}
-      <Leadership />
+      {/* Our Approach */}
+      <section className="bg-warm-white py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8 }}
+          className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8"
+        >
+          <SectionHeading
+            label="Our Approach"
+            headline="A Rotating Team of Specialists"
+          />
+          <div className="space-y-6 font-sans text-base text-body-text font-light leading-relaxed">
+            <p>
+              We don&apos;t believe in a one-size-fits-all approach. Every
+              retreat brings together a rotating team of specialists &mdash;
+              sound therapists, massage practitioners, breathwork facilitators,
+              yoga instructors, clinical counselors &mdash; each chosen for
+              their ability to{" "}
+              <strong className="font-medium text-deep-forest">
+                hold space
+              </strong>{" "}
+              and meet guests where they are.
+            </p>
+            <p>
+              This rotating model means no two retreats are exactly the same.
+              The therapeutic framework stays consistent, but the energy, the
+              practitioners, and the specific modalities adapt. We want{" "}
+              <strong className="font-medium text-deep-forest">
+                something for everyone
+              </strong>{" "}
+              &mdash; whether you need deep bodywork, guided meditation, or just
+              someone to sit with you in silence while you process.
+            </p>
+            <p>
+              Every retreat is anchored by daily Guided Transformation Sessions
+              led by a licensed clinical practitioner. This is the one constant
+              &mdash; the clinical backbone that ensures your experience
+              isn&apos;t just memorable, but genuinely transformative.
+            </p>
+          </div>
+        </motion.div>
+      </section>
 
       {/* The Network */}
-      <section className="bg-warm-white py-24">
+      <section className="bg-cream py-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -229,15 +285,15 @@ export default function AboutPage() {
             <p>
               Currently live in{" "}
               <strong className="font-medium text-deep-forest">
-                Thailand (Narai Healing Sanctuary, Koh Samui)
+                Tulum, Mexico
               </strong>{" "}
               and{" "}
               <strong className="font-medium text-deep-forest">
-                Dominican Republic (Zaria Eco Retreat, Saman&aacute;)
+                Bali, Indonesia
               </strong>
               , with{" "}
               <strong className="font-medium text-deep-forest">
-                Peru and Colombia
+                Costa Rica and Peru
               </strong>{" "}
               planned for 2027.
             </p>

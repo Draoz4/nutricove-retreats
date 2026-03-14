@@ -28,22 +28,30 @@ export default function Home() {
         primaryCta={{ label: "Find Your Retreat", href: "/book" }}
       />
 
-      {/* 2. Your Journey — 4 Steps */}
+      {/* 2. Your Journey */}
       <JourneySection />
 
       {/* 3. Destinations Preview */}
-      <DestinationsPreview />
+      <div id="destinations">
+        <DestinationsPreview />
+      </div>
 
       {/* 4. Retreat Themes Preview */}
-      <ThemesPreview />
+      <div id="themes">
+        <ThemesPreview />
+      </div>
 
       {/* 5. What's Included */}
-      <WhatsIncluded />
+      <div id="included">
+        <WhatsIncluded />
+      </div>
 
       {/* 6. Pricing */}
-      <PricingSection />
+      <div id="pricing">
+        <PricingSection />
+      </div>
 
-      {/* 7. Premium Add-Ons — Full Menu */}
+      {/* 7. Premium Add-Ons */}
       <AddOnsMenu />
 
       {/* 8. Plant Ceremony Safety & Preparation */}
@@ -68,7 +76,10 @@ export default function Home() {
         headline="Ready to Transform?"
         body="Choose your theme, pick your destination, and secure your spot. Our team will walk you through a brief wellness intake to tailor your experience."
         primaryCta={{ label: "Start Your Booking", href: "/book" }}
-        secondaryCta={{ label: "Questions? Talk to Our Team", href: "mailto:retreats@nutricove.com" }}
+        secondaryCta={{
+          label: "Questions? Talk to Our Team",
+          href: "mailto:retreats@nutricove.com",
+        }}
       />
 
       {/* 12. Footer */}
