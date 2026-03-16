@@ -4,9 +4,6 @@ import JourneySection from "@/components/sections/JourneySection";
 import DestinationsPreview from "@/components/sections/DestinationsPreview";
 import ThemesPreview from "@/components/sections/ThemesPreview";
 import WhatsIncluded from "@/components/sections/WhatsIncluded";
-import PricingSection from "@/components/sections/PricingSection";
-import AddOnsMenu from "@/components/sections/AddOnsMenu";
-import PlantCeremonySafety from "@/components/sections/PlantCeremonySafety";
 import BlogPreview from "@/components/sections/BlogPreview";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTABlock from "@/components/CTABlock";
@@ -28,15 +25,15 @@ export default function Home() {
         primaryCta={{ label: "Find Your Retreat", href: "/book" }}
       />
 
-      {/* 2. Your Journey */}
+      {/* 2. Your Journey — Timeline */}
       <JourneySection />
 
-      {/* 3. Destinations Preview */}
+      {/* 3. Destinations — Interactive Map */}
       <div id="destinations">
         <DestinationsPreview />
       </div>
 
-      {/* 4. Retreat Themes Preview */}
+      {/* 4. Retreat Themes — Quiz */}
       <div id="themes">
         <ThemesPreview />
       </div>
@@ -46,21 +43,10 @@ export default function Home() {
         <WhatsIncluded />
       </div>
 
-      {/* 6. Pricing */}
-      <div id="pricing">
-        <PricingSection />
-      </div>
-
-      {/* 7. Premium Add-Ons */}
-      <AddOnsMenu />
-
-      {/* 8. Plant Ceremony Safety & Preparation */}
-      <PlantCeremonySafety />
-
-      {/* 9. Blog Preview */}
+      {/* 6. Blog Preview */}
       <BlogPreview />
 
-      {/* 10. FAQ */}
+      {/* 7. FAQ */}
       <section className="bg-warm-white py-24" id="faq">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
@@ -71,7 +57,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 11. Booking CTA */}
+      {/* 8. Booking CTA */}
       <CTABlock
         headline="Ready to Transform?"
         body="Choose your theme, pick your destination, and secure your spot. Our team will walk you through a brief wellness intake to tailor your experience."
@@ -82,7 +68,7 @@ export default function Home() {
         }}
       />
 
-      {/* 12. Footer */}
+      {/* 9. Footer */}
       <Footer />
     </>
   );

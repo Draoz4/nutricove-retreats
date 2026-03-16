@@ -60,53 +60,42 @@ export default function AddOnsMenu() {
             transition={{ duration: 0.3 }}
           >
             {activeTab < addOns.length ? (
-              <div className="grid gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
                 {addOns[activeTab].items.map((item, i) => (
                   <motion.div
                     key={item.name}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
-                    className="flex items-center justify-between p-5 rounded-xl bg-pure-white border border-brand-border hover:shadow-md transition-all group"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: i * 0.04 }}
+                    className="group flex items-center gap-3 p-4 rounded-xl bg-deep-forest hover:bg-deep-forest/90 transition-colors"
                   >
-                    <div className="flex-1">
-                      <h4 className="font-serif text-lg text-deep-forest">{item.name}</h4>
-                      {item.description && (
-                        <p className="text-sm font-sans text-muted-text mt-0.5">{item.description}</p>
-                      )}
+                    <div className="flex-shrink-0 flex items-center justify-center w-9 h-9 rounded-lg bg-gold/10 text-gold group-hover:bg-gold/20 transition-colors">
+                      {activeTab === 0 && <Syringe className="w-4 h-4" />}
+                      {activeTab === 1 && <Pill className="w-4 h-4" />}
+                      {activeTab === 2 && <Zap className="w-4 h-4" />}
                     </div>
-                    <div className="text-right ml-4">
-                      <span className="font-serif text-xl text-terracotta font-semibold">${item.price}</span>
-                      {item.unit && <span className="text-xs text-muted-text block">/{item.unit}</span>}
-                    </div>
+                    <span className="font-serif text-sm text-pure-white leading-tight">
+                      {item.name}
+                    </span>
                   </motion.div>
                 ))}
               </div>
             ) : (
-              <div className="grid gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                 {addOnPackages.map((pkg, i) => (
                   <motion.div
                     key={pkg.name}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
-                    className="relative p-6 rounded-2xl bg-deep-forest text-pure-white overflow-hidden"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: i * 0.04 }}
+                    className="group flex items-center gap-3 p-4 rounded-xl bg-deep-forest hover:bg-deep-forest/90 transition-colors"
                   >
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_80%_50%,rgba(184,148,62,0.08),transparent)]" />
-                    <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <h4 className="font-serif text-xl text-pure-white">{pkg.name}</h4>
-                          <span className="text-xs font-sans px-2 py-0.5 rounded-full bg-gold/20 text-gold-light">
-                            {pkg.savings}
-                          </span>
-                        </div>
-                        <p className="text-sm font-sans text-warm-sand/60">{pkg.items}</p>
-                      </div>
-                      <div className="text-right">
-                        <span className="font-serif text-2xl text-gold-light font-semibold">${pkg.price.toLocaleString()}</span>
-                      </div>
+                    <div className="flex-shrink-0 flex items-center justify-center w-9 h-9 rounded-lg bg-gold/10 text-gold group-hover:bg-gold/20 transition-colors">
+                      <Package className="w-4 h-4" />
                     </div>
+                    <span className="font-serif text-sm text-pure-white leading-tight">
+                      {pkg.name}
+                    </span>
                   </motion.div>
                 ))}
               </div>

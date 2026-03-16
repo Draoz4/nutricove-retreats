@@ -13,7 +13,6 @@ import Accommodations from "@/components/sections/Accommodations";
 import ActivitiesGrid from "@/components/sections/ActivitiesGrid";
 import ThemesItinerary from "@/components/sections/ThemesItinerary";
 import DailyRhythm from "@/components/sections/DailyRhythm";
-import PricingSection from "@/components/sections/PricingSection";
 import AddOnsMenu from "@/components/sections/AddOnsMenu";
 import type { Destination, FAQItem } from "@/types";
 
@@ -69,10 +68,7 @@ export default function DestinationPage({ destination, faqs, showLeadership = fa
       {/* 9. Daily Rhythm */}
       <DailyRhythm />
 
-      {/* 10. Pricing */}
-      <PricingSection />
-
-      {/* 11. Premium Add-Ons */}
+      {/* 10. Premium Add-Ons */}
       <AddOnsMenu />
 
       {/* 12. FAQ */}

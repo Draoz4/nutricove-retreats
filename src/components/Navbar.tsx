@@ -12,7 +12,6 @@ const navLinks = [
   { href: "/#destinations", label: "Destinations" },
   { href: "/#themes", label: "Retreat Themes" },
   { href: "/#included", label: "What's Included" },
-  { href: "/#pricing", label: "Pricing" },
   { href: "/about", label: "About" },
   { href: "/blog", label: "Journal" },
 ];
@@ -86,7 +85,7 @@ export default function Navbar() {
                 size="sm"
                 className="rounded-full bg-terracotta hover:bg-terracotta-hover text-pure-white px-6"
               >
-                <Link href="/book">Book a Retreat</Link>
+                <Link href="/#themes">Take the Quiz</Link>
               </Button>
             </div>
 
@@ -132,8 +131,8 @@ export default function Navbar() {
                 asChild
                 className="rounded-full bg-terracotta hover:bg-terracotta-hover text-pure-white px-8 mt-4"
               >
-                <Link href="/book" onClick={() => setMobileOpen(false)}>
-                  Book a Retreat
+                <Link href="/#themes" onClick={() => setMobileOpen(false)}>
+                  Take the Quiz
                 </Link>
               </Button>
             </div>
