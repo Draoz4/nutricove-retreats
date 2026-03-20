@@ -41,7 +41,7 @@ export default function HeroSection({
   headline = "Healing Has a Destination",
   highlightWord = "Destination",
   subtext = "Seven nights of clinically-guided transformation at world-class retreat centers. You pick the life challenge. We handle everything else.",
-  primaryCta = { label: "Find Your Retreat", href: "/book" },
+  primaryCta = { label: "Take the Quiz", href: "/#themes" },
   secondaryCta,
 }: HeroSectionProps) {
   const headlineParts = highlightWord

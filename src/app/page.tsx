@@ -22,7 +22,7 @@ export default function Home() {
         headline="Healing Has a Destination"
         highlightWord="Destination"
         subtext="Seven nights of clinically-guided transformation at world-class retreat centers. You pick the life challenge. We handle everything else."
-        primaryCta={{ label: "Find Your Retreat", href: "/book" }}
+        primaryCta={{ label: "Take the Quiz", href: "/#themes" }}
       />
 
       {/* 2. Your Journey — Timeline */}
@@ -61,7 +61,7 @@ export default function Home() {
       <CTABlock
         headline="Ready to Transform?"
         body="Choose your theme, pick your destination, and secure your spot. Our team will walk you through a brief wellness intake to tailor your experience."
-        primaryCta={{ label: "Start Your Booking", href: "/book" }}
+        primaryCta={{ label: "Take the Quiz", href: "/#themes" }}
         secondaryCta={{
           label: "Questions? Talk to Our Team",
           href: "mailto:retreats@nutricove.com",

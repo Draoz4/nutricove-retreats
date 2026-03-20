@@ -83,7 +83,7 @@ export default async function BlogArticlePage({ params }: Props) {
       <CTABlock
         headline="Ready to Experience This Yourself?"
         body="Book your retreat and begin your transformation. Our team will guide you through the process."
-        primaryCta={{ label: "Book Your Retreat", href: "/book" }}
+        primaryCta={{ label: "Take the Quiz", href: "/#themes" }}
         secondaryCta={{ label: "Explore Destinations", href: "/#destinations" }}
       />
 

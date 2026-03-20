@@ -83,7 +83,7 @@ export default function DestinationPage({ destination, faqs, showLeadership = fa
       <CTABlock
         headline="Ready to Transform?"
         body={"Secure your spot at " + destination.resortName + ". Our team will guide you through the booking process."}
-        primaryCta={{ label: "Book Your Retreat", href: "/book" }}
+        primaryCta={{ label: "Take the Quiz", href: "/#themes" }}
         secondaryCta={{ label: "Questions? Talk to Our Team", href: "mailto:retreats@nutricove.com" }}
       />
 

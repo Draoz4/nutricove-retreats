@@ -7,7 +7,7 @@ const exploreLinks = [
   { href: "/#themes", label: "Retreat Themes" },
   { href: "/blog", label: "Journal" },
   { href: "/about", label: "About" },
-  { href: "/book", label: "Book a Retreat" },
+  { href: "/#themes", label: "Take the Quiz" },
 ];
 
 const partnerLinks = [

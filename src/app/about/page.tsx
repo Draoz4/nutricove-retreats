@@ -349,7 +349,7 @@ export default function AboutPage() {
       <CTABlock
         headline="Your Transformation Begins with a Single Decision"
         body="Spaces are intentionally limited. Release, Reset, Return, or Reclaim \u2014 the full 7-night all-inclusive program starts at $6,000 per person."
-        primaryCta={{ label: "Book Your Retreat", href: "/book" }}
+        primaryCta={{ label: "Take the Quiz", href: "/#themes" }}
         secondaryCta={{
           label: "Explore Destinations",
           href: "/#destinations",
