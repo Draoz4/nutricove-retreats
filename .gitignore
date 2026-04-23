@@ -39,3 +39,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local claude config
+.claude/
+
+# raw unoptimized video sources (do not commit - use /public/videos for deploy)
+/videos/
+
+# orphan local images (not referenced by the code)
+/images/
+
+# local utility scripts
+transcode-videos.ps1

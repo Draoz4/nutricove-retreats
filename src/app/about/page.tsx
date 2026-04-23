@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import SectionHeading from "@/components/SectionHeading";
 import CTABlock from "@/components/CTABlock";
 import Footer from "@/components/Footer";
+import HeroBackgroundVideo from "@/components/HeroBackgroundVideo";
 import { cn } from "@/lib/utils";
 
 const containerVariants: Variants = {
@@ -66,7 +67,7 @@ const pillars = [
 ];
 
 const stats = [
-  { icon: Users, value: "7", label: "Night Programs" },
+  { icon: Users, value: "5", label: "Night Programs" },
   { icon: Heart, value: "4", label: "Healing Themes" },
   { icon: Globe, value: "2", label: "Global Destinations" },
   { icon: Shield, value: "100%", label: "Clinically-Guided" },
@@ -80,17 +81,7 @@ export default function AboutPage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden bg-deep-forest py-28 md:py-36">
-        <div
-          aria-hidden
-          className="absolute inset-0 pointer-events-none isolate opacity-50"
-        >
-          <div className="w-[35rem] h-[80rem] -translate-y-[350px] absolute left-0 top-0 -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,rgba(184,148,62,0.08)_0,rgba(184,148,62,0.02)_50%,transparent_80%)]" />
-          <div className="h-[80rem] absolute left-0 top-0 w-56 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,rgba(184,148,62,0.06)_0,rgba(184,148,62,0.02)_80%,transparent_100%)] [translate:5%_-50%]" />
-        </div>
-        <div
-          aria-hidden
-          className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_center,rgba(184,148,62,0.12)_0%,transparent_70%)]"
-        />
+        <HeroBackgroundVideo slug="about" overlayOpacity={68} />
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -348,7 +339,7 @@ export default function AboutPage() {
       {/* CTA */}
       <CTABlock
         headline="Your Transformation Begins with a Single Decision"
-        body="Spaces are intentionally limited. Release, Reset, Return, or Reclaim \u2014 the full 7-night all-inclusive program starts at $6,000 per person."
+        body="Spaces are intentionally limited. Release, Reset, Return, or Reclaim \u2014 the full 7-day, 5-night all-inclusive program starts at $6,000 per person."
         primaryCta={{ label: "Take the Quiz", href: "/#themes" }}
         secondaryCta={{
           label: "Explore Destinations",

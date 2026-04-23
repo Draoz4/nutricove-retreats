@@ -21,8 +21,9 @@ export default function Home() {
         label="Curated Wellness Retreats Worldwide"
         headline="Healing Has a Destination"
         highlightWord="Destination"
-        subtext="Seven nights of clinically-guided transformation at world-class retreat centers. You pick the life challenge. We handle everything else."
+        subtext="Seven days, five nights of clinically-guided transformation at world-class retreat centers. You pick the life challenge. We handle everything else."
         primaryCta={{ label: "Take the Quiz", href: "/#themes" }}
+        videoSlug="home"
       />
 
       {/* 2. Your Journey — Timeline */}

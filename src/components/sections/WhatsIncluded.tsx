@@ -3,18 +3,19 @@
 import { motion } from "framer-motion";
 import {
   Home, UtensilsCrossed, Brain, Flower2, Hand,
-  Flame, TreePine, Smartphone,
+  Flame, TreePine, Smartphone, Plane,
 } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 
 const items = [
-  { icon: Home, title: "7 Nights Accommodation" },
+  { icon: Home, title: "5 Nights Accommodation" },
   { icon: UtensilsCrossed, title: "All Meals & Beverages" },
   { icon: Brain, title: "Guided Transformation Sessions" },
   { icon: Flower2, title: "Daily Yoga & Meditation" },
   { icon: Hand, title: "Spa & Bodywork" },
   { icon: Flame, title: "Ceremonies & Rituals" },
   { icon: TreePine, title: "Curated Excursions" },
+  { icon: Plane, title: "Airport Transfers" },
   { icon: Smartphone, title: "Aftercare Integration" },
 ];
 

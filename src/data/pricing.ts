@@ -5,7 +5,7 @@ export const pricingTiers: PricingTier[] = [
     name: "Payment Plan",
     price: 7000,
     perPerson: true,
-    note: "per person · 7 nights",
+    note: "per person · 7 days, 5 nights",
     features: [
       "Split into installments",
       "Full balance due 15 days before arrival",
@@ -20,7 +20,7 @@ export const pricingTiers: PricingTier[] = [
     originalPrice: 7000,
     savings: "Save $500",
     perPerson: true,
-    note: "per person · 7 nights",
+    note: "per person · 7 days, 5 nights",
     features: [
       "Pay $3,250 at booking",
       "Remaining $3,250 due 15 days before arrival",
@@ -35,7 +35,7 @@ export const pricingTiers: PricingTier[] = [
     originalPrice: 7000,
     savings: "Best Value — Save $1,000",
     perPerson: true,
-    note: "per person · 7 nights",
+    note: "per person · 7 days, 5 nights",
     features: [
       "One payment — fully secured",
       "Biggest savings available",

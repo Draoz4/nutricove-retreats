@@ -18,6 +18,7 @@ export default function ApplyPage() {
         label="Join the Network"
         headline="Apply to NutriCove"
         subtext="We partner with licensed practitioners and world-class resorts. Choose your application below."
+        videoSlug="reclaim"
       />
 
       {/* Application sections */}

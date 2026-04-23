@@ -20,6 +20,7 @@ export default function BlogPage() {
         label="Insights"
         headline="From the Journal"
         subtext="Perspectives on healing, transformation, and the science behind the retreat experience."
+        videoSlug="about"
       />
 
       <BlogGrid posts={blogPosts} />

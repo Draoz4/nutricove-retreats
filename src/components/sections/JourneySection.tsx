@@ -21,7 +21,7 @@ const steps = [
   {
     step: "04",
     title: "Transform",
-    description: "Seven nights of clinically-guided transformation.",
+    description: "Seven days, five nights of clinically-guided transformation.",
   },
 ];
 

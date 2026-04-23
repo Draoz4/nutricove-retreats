@@ -117,7 +117,7 @@ Reset has no timing requirements. If you're burned out, you're burned out. The s
 
 ## The Bottom Line
 
-Choose Release if something ended and you need to process it. Choose Reset if nothing ended but everything feels empty. Both are 7-night, all-inclusive programs with daily Guided Transformation Sessions, and both produce profound results. The question is simply: what's the primary challenge you're carrying right now?`,
+Choose Release if something ended and you need to process it. Choose Reset if nothing ended but everything feels empty. Both are 7-day, 5-night, all-inclusive programs with daily Guided Transformation Sessions, and both produce profound results. The question is simply: what's the primary challenge you're carrying right now?`,
   },
   {
     slug: "science-behind-7-day-immersion",
@@ -128,7 +128,7 @@ Choose Release if something ended and you need to process it. Choose Reset if no
     date: "2026-01-28",
     readTime: "9 min read",
     image: "/images/blog/science-7-day-immersion.png",
-    content: `People sometimes ask why our retreats are seven nights instead of three or four. It's not arbitrary. The 7-day duration is based on neuroscience research about how long it takes for meaningful psychological change to begin consolidating.
+    content: `People sometimes ask why our retreats are seven days and five nights instead of a quick weekend. It's not arbitrary. The 7-day duration is based on neuroscience research about how long it takes for meaningful psychological change to begin consolidating.
 
 ## The Problem with Weekend Retreats
 
@@ -144,7 +144,7 @@ Research on neuroplasticity — the brain's ability to rewire itself — shows t
 
 **Repeated practice of new patterns.** Our daily Guided Transformation Sessions aren't one-off workshops. They're sequential, building on each other over seven days. Each session reinforces the neural pathways established in the previous one. By Day 5, guests often report that insights are arising spontaneously — a sign that new patterns are beginning to automate.
 
-**Sleep consolidation.** Memory and learning consolidate during sleep. Seven nights means seven cycles of sleep consolidation, each one strengthening the therapeutic work done during the day. This is one reason we're strict about protecting sleep quality at our retreats — no late-night activities that disrupt recovery.
+**Sleep consolidation.** Memory and learning consolidate during sleep. Five nights of on-site sleep means five cycles of consolidation, each one strengthening the therapeutic work done during the day. This is one reason we're strict about protecting sleep quality at our retreats — no late-night activities that disrupt recovery.
 
 **Emotional processing arc.** Psychological research on grief, trauma, and life transitions shows that deep emotional processing follows a predictable arc: resistance, engagement, breakthrough, and integration. This arc typically unfolds over 5-7 days of sustained therapeutic work. Shorter retreats often get stuck in the resistance phase — guests leave just as the real work is about to begin.
 
@@ -162,7 +162,7 @@ There's also a practical consideration: most working professionals can take a we
 
 ## The NutriCove Difference
 
-Many retreat centers offer programs of various lengths — 3-day, 5-day, 10-day. We made a deliberate decision to standardize at seven nights because it's the minimum effective dose for the kind of change we're facilitating. Combined with daily clinically-guided group therapy, morning and evening practices, ceremony, and the support of a small, theme-matched group, seven days creates conditions for genuine transformation.
+Many retreat centers offer programs of various lengths — 3-day, 5-day, 10-day. We made a deliberate decision to standardize at seven days and five nights because it's the minimum effective dose for the kind of change we're facilitating. Combined with daily clinically-guided group therapy, morning and evening practices, ceremony, and the support of a small, theme-matched group, seven days creates conditions for genuine transformation.
 
 This is also why we don't call it a vacation. A vacation is about escape. A retreat is about encounter — encountering yourself, your patterns, and the possibility of change. Seven days gives you enough time to move through resistance, do the work, and begin integrating the results before you return home.
 

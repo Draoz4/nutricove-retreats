@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import Script from "next/script";
+import FloatingConsultButton from "@/components/FloatingConsultButton";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -19,7 +20,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "NutriCove Wellness Retreats — Healing Has a Destination",
   description:
-    "Curated all-inclusive wellness retreats at world-class resorts. Seven nights of clinically-guided transformation. Thailand & Dominican Republic. Release, Reset, Return, or Reclaim.",
+    "Curated all-inclusive wellness retreats at world-class resorts. Seven days, five nights of clinically-guided transformation. Thailand & Dominican Republic. Release, Reset, Return, or Reclaim.",
 };
 
 export default function RootLayout({
@@ -43,6 +44,7 @@ gtag('config', 'G-78XX19E18R');`}
       </head>
       <body className={`${cormorant.variable} ${dmSans.variable} antialiased`}>
         {children}
+        <FloatingConsultButton />
       </body>
     </html>
   );

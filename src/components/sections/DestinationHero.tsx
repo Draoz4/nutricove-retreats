@@ -4,7 +4,14 @@ import Image from "next/image";
 import { motion, type Variants } from "framer-motion";
 import { MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import HeroBackgroundVideo from "@/components/HeroBackgroundVideo";
 import type { Destination } from "@/types";
+
+// Map destination slugs to their video slugs
+const DESTINATION_VIDEO_MAP: Record<string, string> = {
+  thailand: "thailand",
+  "dominican-republic": "dominican-republic",
+};
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -36,30 +43,33 @@ interface DestinationHeroProps {
 }
 
 export default function DestinationHero({ destination }: DestinationHeroProps) {
+  const videoSlug = DESTINATION_VIDEO_MAP[destination.slug];
+
   return (
     <section className="relative min-h-[85vh] flex items-end overflow-hidden">
-      {/* Background image */}
-      {destination.heroImage ? (
-        <Image
-          src={destination.heroImage}
-          alt={destination.resortName}
-          fill
-          className="object-cover"
-          priority
-          sizes="100vw"
-        />
+      {videoSlug ? (
+        <HeroBackgroundVideo slug={videoSlug} overlayOpacity={50} />
+      ) : destination.heroImage ? (
+        <>
+          <Image
+            src={destination.heroImage}
+            alt={destination.resortName}
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-deep-forest via-deep-forest/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-deep-forest/30 to-transparent" />
+        </>
       ) : (
         <div className="absolute inset-0 bg-gradient-to-br from-deep-forest to-ocean/30" />
       )}
 
-      {/* Cinematic gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-t from-deep-forest via-deep-forest/40 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-deep-forest/30 to-transparent" />
-
       {/* Gold ambient light at top */}
       <div
         aria-hidden
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(184,148,62,0.08)_0%,transparent_70%)]"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(184,148,62,0.08)_0%,transparent_70%)] pointer-events-none"
       />
 
       {/* Content */}

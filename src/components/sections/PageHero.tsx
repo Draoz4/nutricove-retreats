@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import HeroBackgroundVideo from "@/components/HeroBackgroundVideo";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -24,22 +25,29 @@ interface PageHeroProps {
   label: string;
   headline: string;
   subtext?: string;
+  /** Background video slug (e.g. "about"). Looks up /videos/{slug}.{webm,mp4} + /posters/{slug}.jpg */
+  videoSlug?: string;
 }
 
-export default function PageHero({ label, headline, subtext }: PageHeroProps) {
+export default function PageHero({ label, headline, subtext, videoSlug }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-deep-forest py-24 md:py-32">
-      {/* Ambient light effects */}
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none isolate opacity-50"
-      >
-        <div className="w-[35rem] h-[80rem] -translate-y-[350px] absolute left-0 top-0 -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,rgba(184,148,62,0.08)_0,rgba(184,148,62,0.02)_50%,transparent_80%)]" />
-      </div>
-      <div
-        aria-hidden
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_center,rgba(184,148,62,0.12)_0%,transparent_70%)]"
-      />
+    <section className="relative overflow-hidden bg-deep-forest py-28 md:py-36">
+      {videoSlug ? (
+        <HeroBackgroundVideo slug={videoSlug} overlayOpacity={65} />
+      ) : (
+        <>
+          <div
+            aria-hidden
+            className="absolute inset-0 pointer-events-none isolate opacity-50"
+          >
+            <div className="w-[35rem] h-[80rem] -translate-y-[350px] absolute left-0 top-0 -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,rgba(184,148,62,0.08)_0,rgba(184,148,62,0.02)_50%,transparent_80%)]" />
+          </div>
+          <div
+            aria-hidden
+            className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse_at_center,rgba(184,148,62,0.12)_0%,transparent_70%)]"
+          />
+        </>
+      )}
 
       <motion.div
         variants={containerVariants}
@@ -62,7 +70,7 @@ export default function PageHero({ label, headline, subtext }: PageHeroProps) {
         {subtext && (
           <motion.p
             variants={itemVariants}
-            className="font-sans text-lg text-pure-white/55 font-light leading-relaxed max-w-xl mx-auto"
+            className="font-sans text-lg text-pure-white/70 font-light leading-relaxed max-w-xl mx-auto"
           >
             {subtext}
           </motion.p>

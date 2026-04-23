@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export const metadata = {
   title: "Book Your Retreat \u2014 NutriCove Retreats",
   description:
-    "Reserve your 7-night all-inclusive wellness retreat. Choose your destination, select your theme, and begin your transformation.",
+    "Reserve your 7-day, 5-night all-inclusive wellness retreat. Choose your destination, select your theme, and begin your transformation.",
 };
 
 export default function BookPage() {
@@ -18,6 +18,7 @@ export default function BookPage() {
         label="Reserve Your Spot"
         headline="Book Your Retreat"
         subtext="Complete the form below to begin your transformation. Our team will follow up within 24 hours."
+        videoSlug="home"
       />
 
       {/* LeadConnector embed */}
