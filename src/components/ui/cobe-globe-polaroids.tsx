@@ -104,7 +104,6 @@ export function GlobePolaroids({
         markerElevation: 0,
         markers: markers.map((m) => ({ location: m.location, size: 0.04 })),
         opacity: 0.9,
-        onRender: () => {},
       });
 
       function animate() {
@@ -160,7 +159,6 @@ export function GlobePolaroids({
           key={m.id}
           style={{
             position: "absolute",
-            // @ts-expect-error CSS Anchor Positioning (new spec, Chrome 125+)
             positionAnchor: `--cobe-${m.id}`,
             bottom: "anchor(top)",
             left: "anchor(center)",

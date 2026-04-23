@@ -146,7 +146,6 @@ export function Globe({
           size: markerSize,
         })),
         opacity: 0.9,
-        onRender: () => {},
       });
 
       function animate() {
