@@ -126,7 +126,7 @@ function ThemeCard({ theme, index }: { theme: (typeof themes)[number]; index: nu
 }
 
 export default function ThemesPreview() {
-  const [iframeHeight, setIframeHeight] = useState(300);
+  const [iframeHeight, setIframeHeight] = useState(640);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   const handleMessage = useCallback((e: MessageEvent) => {
@@ -179,41 +179,44 @@ export default function ThemesPreview() {
           ))}
         </div>
 
-        {/* Quiz embed */}
+        {/* Quiz embed — clean white card to blend with the quiz's native white UI */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="relative bg-deep-forest rounded-2xl p-6 md:p-10 overflow-hidden mt-16 max-w-4xl mx-auto"
+          className="relative mt-20 max-w-3xl mx-auto"
         >
-          <div
-            aria-hidden
-            className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(184,148,62,0.1),transparent)]"
-          />
-          <div className="relative z-10 flex flex-col items-center">
-            <span className="inline-block text-[11px] font-sans font-bold tracking-[0.2em] uppercase mb-3 text-gold-light">
+          {/* Heading sits on page background */}
+          <div className="text-center mb-8">
+            <span className="inline-block text-[11px] font-sans font-bold tracking-[0.2em] uppercase mb-3 text-gold">
               Find Your Fit
             </span>
-            <h3 className="font-serif text-xl md:text-2xl text-pure-white mb-6 text-center">
+            <h3 className="font-serif text-2xl md:text-3xl text-deep-forest">
               Not Sure Which Theme Is Right for You?
             </h3>
-            <div className="w-full max-w-2xl mx-auto">
-              <iframe
-                ref={iframeRef}
-                src="https://api.leadconnectorhq.com/widget/quiz/LnXn0FbY0NJWX02U0bNv"
-                style={{
-                  border: "none",
-                  width: "100%",
-                  height: iframeHeight + "px",
-                  borderRadius: "12px",
-                  transition: "height 0.3s ease",
-                }}
-                scrolling="no"
-                id="LnXn0FbY0NJWX02U0bNv"
-                title="Retreat Theme Quiz"
-              />
-            </div>
+            <p className="mt-3 text-sm font-sans text-secondary-text max-w-md mx-auto">
+              Takes under two minutes. We&apos;ll recommend the retreat theme best matched to where you are right now.
+            </p>
+          </div>
+
+          {/* White card frames the quiz iframe so its native UI blends cleanly */}
+          <div className="relative bg-pure-white rounded-2xl shadow-[0_12px_40px_-12px_rgba(27,42,33,0.12)] ring-1 ring-brand-border/60 overflow-hidden">
+            <iframe
+              ref={iframeRef}
+              src="https://api.leadconnectorhq.com/widget/quiz/LnXn0FbY0NJWX02U0bNv"
+              style={{
+                border: "none",
+                width: "100%",
+                height: iframeHeight + "px",
+                minHeight: "640px",
+                display: "block",
+                transition: "height 0.35s ease",
+              }}
+              scrolling="no"
+              id="LnXn0FbY0NJWX02U0bNv"
+              title="Retreat Theme Quiz"
+            />
           </div>
         </motion.div>
       </div>
